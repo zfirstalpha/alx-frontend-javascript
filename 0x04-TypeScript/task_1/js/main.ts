@@ -50,4 +50,4 @@ function printTeacher({ firstName, lastName }: { firstName: string; lastName: st
 
 // Example usage
 console.log(printTeacher({ firstName: "John", lastName: "Doe" }));      // J. Doe
-console.log(printTeacher({ firstName: "Alice", lastName: "Johnson" })); 
+console.log(printTeacher({ firstName: "Alice", lastName: "Johnson" })); // A. Johnson
