@@ -40,15 +40,14 @@ console.log("Director:", director1);
 
 // Function interface
 interface printTeacherFunction {
-  (teacher: { firstName: string; lastName: string }): string;
+  (firstName: string, lastName: string): string;
 }
 
-// Named function using object destructuring
-function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+// Function definition
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName[0]}. ${lastName}`;
 }
 
 // Example usage
-console.log(printTeacher({ firstName: "John", lastName: "Doe" }));      // J. Doe
-console.log(printTeacher({ firstName: "Alice", lastName: "Johnson" })); // A. Johnson
-
+console.log(printTeacher("John", "Doe"));      // J. Doe
+console.log(printTeacher("Alice", "Johnson")); // A. Johnson
