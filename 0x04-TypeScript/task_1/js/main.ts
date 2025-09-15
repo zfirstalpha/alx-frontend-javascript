@@ -38,15 +38,17 @@ const director1: Director = {
 console.log("Director:", director1);
 
 
+// Function interface
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  (teacher: { firstName: string; lastName: string }): string;
 }
 
-// Named function implementation
-function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
+// Named function using object destructuring
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+  return `${firstName[0]}. ${lastName}`;
 }
 
 // Example usage
-console.log(printTeacher("robel", "fike")); // Output: J. Doe
-console.log(printTeacher("isac", "alex")); // Output: A. Johnson
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));      // J. Doe
+console.log(printTeacher({ firstName: "Alice", lastName: "Johnson" })); // A. Johnson
+
