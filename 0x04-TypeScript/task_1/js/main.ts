@@ -1,38 +1,38 @@
 // Teacher interface
 interface Teacher {
-  readonly firstName: string;       // only set on init
-  readonly lastName: string;        // only set on init
-  fullTimeEmployee: boolean;        // always required
-  yearsOfExperience?: number;       // optional
-  location: string;                 // always required
-  [key: string]: any;               // allow extra properties
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  [key: string]: any;
 }
 
-// Directors interface extending Teacher
-interface Directors extends Teacher {
-  numberOfReports: number;          // mandatory
+// Director interface extending Teacher (singular!)
+interface Director extends Teacher {
+  numberOfReports: number;
 }
 
 // Example teacher
 const teacher1: Teacher = {
-  firstName: "henok",
-  lastName: "lam",
+  firstName: "Alice",
+  lastName: "Johnson",
   fullTimeEmployee: true,
   location: "Addis Ababa",
   yearsOfExperience: 5,
-  contract: true,                   // extra property
+  contract: true,
 };
 
 console.log("Teacher:", teacher1);
 
 // Example director
-const director1: Directors = {
-  firstName: "roba",
-  lastName: "fike",
+const director1: Director = {
+  firstName: "John",
+  lastName: "Doe",
   fullTimeEmployee: true,
-  location: "aa",
+  location: "London",
   numberOfReports: 17,
-  contract: false,                  // extra property allowed
+  contract: false,
 };
 
 console.log("Director:", director1);
